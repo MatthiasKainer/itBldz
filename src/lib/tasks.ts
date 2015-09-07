@@ -57,7 +57,7 @@ export class TaskExecutionPrepareService {
     
     public static initTaskConfig(grunt, task, config): any {
         if (!config) throw "A task requires a configuration to run";
-        TaskExecutionPrepareService.gruntifyTask(config, task);
+        TaskExecutionPrepareService.gruntifyTask(config, task.split(":")[0]);
         grunt.initConfig(config);
     }
 }
